@@ -25,3 +25,4 @@ include $(LOCAL_PATH)/product/*.mk
 
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/tiffany/tiffany-vendor.mk)
+

@@ -63,36 +63,33 @@ static void init_finger_print_properties()
 
 static void init_alarm_boot_properties()
 {
-    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
-    char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
-    std::string boot_reason;
-    std::string power_off_alarm;
-    std::string reboot_reason = property_get("ro.boot.alarmboot");
+    int boot_reason;
+    FILE *fp;
 
-    if (read_file(boot_reason_file, &boot_reason)
-            && read_file(power_off_alarm_file, &power_off_alarm)) {
-        /*
-         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-         * For existing PMIC chips, the following mapping applies
-         * for the value of boot_reason:
-         *
-         * 0 -> unknown
-         * 1 -> hard reset
-         * 2 -> sudden momentary power loss (SMPL)
-         * 3 -> real time clock (RTC)
-         * 4 -> DC charger inserted
-         * 5 -> USB charger inserted
-         * 6 -> PON1 pin toggled (for secondary PMICs)
-         * 7 -> CBLPWR_N pin toggled (for external power supply)
-         * 8 -> KPDPWR_N pin toggled (power key pressed)
-         */
-         if ((Trim(boot_reason) == "3" || reboot_reason == "true")
-                 && Trim(power_off_alarm) == "1") {
-             property_set("ro.alarm_boot", "true");
-         } else {
-             property_set("ro.alarm_boot", "false");
-         }
-    }
+    fp = fopen("/proc/sys/kernel/boot_reason", "r");
+    fscanf(fp, "%d", &boot_reason);
+    fclose(fp);
+
+    /*
+     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+     * For existing PMIC chips, the following mapping applies
+     * for the value of boot_reason:
+     *
+     * 0 -> unknown
+     * 1 -> hard reset
+     * 2 -> sudden momentary power loss (SMPL)
+     * 3 -> real time clock (RTC)
+     * 4 -> DC charger inserted
+     * 5 -> USB charger inserted
+     * 6 -> PON1 pin toggled (for secondary PMICs)
+     * 7 -> CBLPWR_N pin toggled (for external power supply)
+     * 8 -> KPDPWR_N pin toggled (power key pressed)
+     */
+     if (boot_reason == 3) {
+        android::init::property_set("ro.alarm_boot", "true");
+     } else {
+        android::init::property_set("ro.alarm_boot", "false");
+     }
 }
 
 void check_device()
@@ -126,22 +123,22 @@ void vendor_load_properties()
     check_device();
     init_finger_print_properties();
 
-    property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_set("dalvik.vm.heapsize", heapsize);
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+    android::init::property_set("dalvik.vm.heapstartsize", heapstartsize);
+    android::init::property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    android::init::property_set("dalvik.vm.heapsize", heapsize);
+    android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
+    android::init::property_set("dalvik.vm.heapminfree", heapminfree);
+    android::init::property_set("dalvik.vm.heapmaxfree", heapmaxfree);
 
-    property_set("ro.hwui.texture_cache_size", "72");
-    property_set("ro.hwui.layer_cache_size", "48");
-    property_set("ro.hwui.r_buffer_cache_size", "8");
-    property_set("ro.hwui.path_cache_size", "32");
-    property_set("ro.hwui.gradient_cache_size", "1");
-    property_set("ro.hwui.drop_shadow_cache_size", "6");
-    property_set("ro.hwui.texture_cache_flushrate", "0.4");
-    property_set("ro.hwui.text_small_cache_width", "1024");
-    property_set("ro.hwui.text_small_cache_height", "1024");
-    property_set("ro.hwui.text_large_cache_width", "2048");
-    property_set("ro.hwui.text_large_cache_height", large_cache_height);
+    android::init::property_set("ro.hwui.texture_cache_size", "72");
+    android::init::property_set("ro.hwui.layer_cache_size", "48");
+    android::init::property_set("ro.hwui.r_buffer_cache_size", "8");
+    android::init::property_set("ro.hwui.path_cache_size", "32");
+    android::init::property_set("ro.hwui.gradient_cache_size", "1");
+    android::init::property_set("ro.hwui.drop_shadow_cache_size", "6");
+    android::init::property_set("ro.hwui.texture_cache_flushrate", "0.4");
+    android::init::property_set("ro.hwui.text_small_cache_width", "1024");
+    android::init::property_set("ro.hwui.text_small_cache_height", "1024");
+    android::init::property_set("ro.hwui.text_large_cache_width", "2048");
+    android::init::property_set("ro.hwui.text_large_cache_height", large_cache_height);
 }

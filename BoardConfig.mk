@@ -16,6 +16,8 @@
 
 LOCAL_PATH := device/xiaomi/tiffany
 
+DEVICE_PATH := device/xiaomi/tiffany
+
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Architecture

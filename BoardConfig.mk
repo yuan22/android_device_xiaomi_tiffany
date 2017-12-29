@@ -226,5 +226,8 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/pronto_wlan.ko:system/lib/modules/wlan.ko
+
 # Inherit from the proprietary version
 -include vendor/xiaomi/tiffany/BoardConfigVendor.mk

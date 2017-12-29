@@ -1,11 +1,3 @@
-# Enable SDLLVM compiler option for build flavour >= N flavour
-PLATFORM_SDK_NPDK = 24
-ENABLE_CAM_SDLLVM  := $(shell if [ $(PLATFORM_SDK_VERSION) -ge $(PLATFORM_SDK_NPDK) ] ; then echo true ; else echo false ; fi)
-ifeq ($(ENABLE_CAM_SDLLVM),true)
-SDCLANGSAVE := $(SDCLANG)
-SDCLANG := true
-endif
-
 ifneq (,$(filter $(TARGET_ARCH), arm arm64))
 
 LOCAL_PATH:= $(call my-dir)
@@ -128,7 +120,6 @@ LOCAL_SHARED_LIBRARIES += libcutils libdl
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
-
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
@@ -137,8 +128,5 @@ LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
 
 include $(call first-makefiles-under,$(LOCAL_PATH))
-endif
-ifeq ($(ENABLE_CAM_SDLLVM),true)
-SDCLANG := $(SDCLANGSAVE)
 endif
 

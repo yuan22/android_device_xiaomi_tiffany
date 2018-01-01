@@ -34,6 +34,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/sysinfo.h>
+#include <unistd.h>
 
 #include <android-base/strings.h>
 
@@ -50,6 +51,15 @@ char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
 char const *large_cache_height;
+
+static void init_finger_print_properties()
+{
+	if (access("/persist/data/fingerprint_version", 0) == -1) {
+		property_set("ro.boot.fingerprint", "fpc");
+	} else {
+		property_set("ro.boot.fingerprint", "goodix");
+	}
+}
 
 static void init_alarm_boot_properties()
 {
@@ -114,6 +124,7 @@ void vendor_load_properties()
 {
     init_alarm_boot_properties();
     check_device();
+    init_finger_print_properties();
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);

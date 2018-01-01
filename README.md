@@ -5,7 +5,7 @@ Device configuration for Xiaomi Mi 5X
 
 The Xiaomi Mi 5X (codenamed _"Tiffany"_) is a mid-end smartphone from Xiaomi.
 
-It was announced in December 2017. Release date was December 2017.
+It was announced in July 2017. Release date was December 2017.
 
 ## Device specifications
 

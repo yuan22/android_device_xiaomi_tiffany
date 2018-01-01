@@ -21,7 +21,7 @@ set -e
 DEVICE=tiffany
 VENDOR=xiaomi
 
-INITIAL_COPYRIGHT_YEAR=2017
+INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -43,10 +43,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 write_headers
 
 write_makefiles "$MY_DIR"/proprietary-files.txt
-
-cat << EOF >> "$ANDROIDMK"
-
-EOF
 
 # Finish
 write_footers

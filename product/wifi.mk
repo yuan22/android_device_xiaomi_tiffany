@@ -3,14 +3,20 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
 
-# Wi-Fi
+# Wifi
 PRODUCT_PACKAGES += \
+    libcld80211 \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwpa_client \
     hostapd \
+    dhcpcd.conf \
+    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
-    libQWiFiSoftApCfg
+    android.hardware.wifi@1.0-service
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -18,6 +18,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
 
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0

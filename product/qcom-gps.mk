@@ -3,7 +3,11 @@ PRODUCT_PACKAGES += \
     gps.msm8953 \
     libcurl \
     libgnss \
-    libgnsspps
+    libgnsspps \
+    libgps.utils \
+    liblocation_api \
+    libloc_core \
+    libloc_pla
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \

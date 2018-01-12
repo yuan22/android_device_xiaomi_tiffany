@@ -851,6 +851,7 @@ vendor/lib64/libtzdrmgenprov.so
 -etc/qdcm_calib_data_otm1911_fhd_video_mode_dsi_panel.xml
 
 # Fingerprint
+bin/fingerprintd
 bin/goodixfingerprintd
 bin/fpc_fingerprint_hal-test
 lib64/hw/fingerprint.default.so
@@ -1127,7 +1128,7 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
-framework/qti-telephony-common.jar
+framework/qti-telephony-common.jar|b3665b3cec1562bf2fb98dc94f86458cb89feab8
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti

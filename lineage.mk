@@ -35,4 +35,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_VENDOR_PRODUCT_NAME := tiffany
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
- BUILD_FINGERPRINT="xiaomi/tiffany/tiffany:7.1.2/N2G47H/8.1.4:user/release-keys"
+ BUILD_FINGERPRINT="xiaomi/tiffany/tiffany:7.1.2/N2G47H/8.1.11:user/release-keys"

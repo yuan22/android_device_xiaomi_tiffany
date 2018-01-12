@@ -5,3 +5,8 @@ allow ueventd vfat:dir search;
 allow ueventd vfat:file { getattr open read };
 allow ueventd wifi_data_file:dir search;
 allow ueventd wifi_data_file:file { getattr open read };
+
+userdebug_or_eng(`
+#For goodix fingerprint permissions checking
+allow untrusted_app goodix_fingerprint_service:service_manager { find };
+')

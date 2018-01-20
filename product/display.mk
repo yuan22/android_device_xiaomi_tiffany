@@ -10,6 +10,15 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     XiaomiDoze
 
+# Display
+PRODUCT_PACKAGES += \
+    copybit.msm8953 \
+    gralloc.msm8953 \
+    hwcomposer.msm8953 \
+    memtrack.msm8953 \
+    liboverlay \
+    libtinyxml
+
 # Display calibration
 PRODUCT_PACKAGES += \
     libjni_livedisplay

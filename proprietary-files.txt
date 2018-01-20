@@ -152,6 +152,7 @@ bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 
 # QCOM Camera Libraries
+lib/hw/camera.msm8953.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
@@ -872,10 +873,6 @@ bin/ipacm
 # Keystore
 vendor/lib/hw/keystore.msm8953.so
 vendor/lib64/hw/keystore.msm8953.so
-
-# Lights
-lib/hw/lights.msm8953.so
-lib64/hw/lights.msm8953.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8953.so

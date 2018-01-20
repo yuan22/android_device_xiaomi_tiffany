@@ -867,7 +867,6 @@ etc/firmware/a530v3_seq.fw2
 etc/firmware/a540_gpmu.fw2
 
 # Ipacm
-bin/ipacm-diag
 bin/ipacm
 
 # Keystore

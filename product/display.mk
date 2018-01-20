@@ -29,5 +29,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.gralloc.gfx_ubwc_disable=0 \
+    persist.sys.force_sw_gles=0 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480

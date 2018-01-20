@@ -867,6 +867,7 @@ etc/firmware/a530v3_seq.fw2
 etc/firmware/a540_gpmu.fw2
 
 # Ipacm
+bin/ipacm-diag
 bin/ipacm
 
 # Keystore
@@ -925,13 +926,24 @@ vendor/lib/libQtiTether.so
 vendor/lib/libconnctrl.so
 
 # Perf
+bin/energy-awareness
 bin/iop
 bin/msm_irqbalance
 vendor/bin/perfd
+vendor/lib/libqti-at.so
+vendor/lib/libqti-iop.so
 vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti_performance.so
+vendor/lib/libqti-wl.so
+vendor/lib/libQtiTether.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-iop.so
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti_performance.so
+vendor/lib64/libqti-wl.so
+vendor/lib64/libQtiTether.so
 
 # Peripheral manager
 bin/pm-proxy

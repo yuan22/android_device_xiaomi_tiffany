@@ -173,6 +173,7 @@ bin/mm-qcamera-daemon
 lib/hw/camera.msm8953.so
 framework/com.android.mediadrm.signer.jar
 framework/org.codeaurora.camera.jar
+lib/libCameraEffectJNI.so
 lib/libminui.so
 lib/libmorpho_groupshot.so
 lib/libmorphohht4.0.so
@@ -2522,6 +2523,10 @@ etc/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2
 etc/firmware/a540_gpmu.fw2
+
+# Griffin Media
+vendor/lib/libmm-omxcore.so
+vendor/lib64/libmm-omxcore.so
 
 # Ipacm
 bin/ipacm-diag

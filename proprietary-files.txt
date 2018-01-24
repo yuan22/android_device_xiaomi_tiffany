@@ -347,8 +347,6 @@ vendor/lib/libXMFD_AgeGender.so
 lib/libcamera_metadata.so
 lib/libcamera_client.so
 lib/libcameraservice.so
-lib/libc.so
-lib64/libc.so
 
 # Camera actuators
 vendor/lib/libactuator_dw9763.so
@@ -2525,8 +2523,8 @@ etc/firmware/a530v3_seq.fw2
 etc/firmware/a540_gpmu.fw2
 
 # Griffin Media
-vendor/lib/libmm-omxcore.so
-vendor/lib64/libmm-omxcore.so
+lib/libmm-omxcore.so
+lib64/libmm-omxcore.so
 
 # Ipacm
 bin/ipacm-diag

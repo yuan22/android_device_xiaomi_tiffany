@@ -18,16 +18,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common aosp stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
-# Inherit from santoni device
+# Inherit from tiffany device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := tiffany
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := lineage_tiffany
+PRODUCT_NAME := aosp_tiffany
 PRODUCT_MODEL := MI 5X
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
